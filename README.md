@@ -44,12 +44,12 @@ Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
 ## How do I use it?
 This script only needs to be used when Vagrant needs to create VMs for you. This is most commonly when you use a new Vagrant file for the first time or can also be after you have run `vagrant destroy`.
 Usage:
-1. Copy the file *vagrant_first_start* file to the folder that contains your Vagrantfile.
-2. Make the script executable via `chmod +x vagrant_first_start`.
-3. Run the script via `./vagrant_first_start`.
+1. Copy the file *vagrant_first_run* file to the folder that contains your Vagrantfile.
+2. Make the script executable via `chmod +x vagrant_first_run`.
+3. Run the script via `./vagrant_first_run`.
 4. Wait patiently - each vm will need to launch, fail and reload.
 
-That's it! From the second time you need these VMs, `vagrant up` or `vagrant resume` is all you need.
+That's it! You should be able to access your machines with `vagrant ssh` now. From the second time you need these VMs, `vagrant up` or `vagrant resume` is all you need.
 
 ## Troubleshooting
 **Nothing happens when I run the script**
