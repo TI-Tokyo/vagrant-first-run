@@ -1,0 +1,12 @@
+#!/bin/bash
+## Pull list of machine names from the Vagrantfile and for each one:
+for i in $(vagrant status | grep "not created" | awk '{print $1}')
+  do
+## Start the machine and let it fail while creating the necessary key for us
+    vagrant up $i
+## Change the permissions on the folder and key to allow the key to be used
+    chmod 755 .vagrant/machines/$i/virtualbox
+    chmod 600 .vagrant/machines/$i/virtualbox/private_key
+## Reload the machine to continue provisioning from where it failed
+    vagrant reload $i
+  done
