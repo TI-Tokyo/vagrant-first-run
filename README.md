@@ -1,13 +1,13 @@
 # vagrant-first-run
 
 ## What does it do?
-This is a very simple script that will read your Vagrantfile, determine how many Virtual Box machines are in it and will initialise the machines that are not yet created while simultaneously fixng the permissions errors that occur when Vagrant creates new keys.
+This is a very simple script that will read your Vagrantfile, determine how many Virtual Box machines are in it and will initialise the machines that are not yet created while simultaneously fixing the permissions errors that occur when Vagrant creates new keys.
 
 ## How does it do this?
 The script runs `vagrant up` on each machine listed in the Vagrantfile. This is a standard startup and the initialisation will fail in the same way as normal. Once it has failed, the script then fixes the permissions and reloads the VM, allowing provisioning to continue from where it normally fails.
 
 ## Why is it needed?
-Security updates on a number of OS's have recently prevented `vagrant ssh` from using the SSH keys that Vagrant auto-generates when it builds a VM for the first time. This also prevents the *vagrant* folder from being synched between the host and the VM.
+Security updates on a number of OS's have recently prevented `vagrant ssh` from using the SSH keys that Vagrant auto-generates when it builds a VM for the first time. This issue also prevents the *vagrant* folder from being synched between the host and the VM.
 
 ## Who is it for?
 People who use Vagrant on a system where `vagrant up` tends to generate errors like this:
